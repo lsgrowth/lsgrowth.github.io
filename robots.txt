@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lsgrowth.github.io/sitemap.xml
