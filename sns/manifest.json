@@ -1,0 +1,81 @@
+{
+ "02c": [
+  "c02-01.jpg",
+  "c02-02.jpg",
+  "c02-03.jpg",
+  "c02-04.jpg",
+  "c02-05.jpg",
+  "c02-06.jpg",
+  "c02-07.jpg"
+ ],
+ "02r": [
+  "r02-cover.jpg",
+  "r02.mp4"
+ ],
+ "03c": [
+  "c03-01.jpg",
+  "c03-02.jpg",
+  "c03-03.jpg",
+  "c03-04.jpg",
+  "c03-05.jpg",
+  "c03-06.jpg",
+  "c03-07.jpg"
+ ],
+ "03r": [
+  "r03-cover.jpg",
+  "r03.mp4"
+ ],
+ "04c": [
+  "c04-01.jpg",
+  "c04-02.jpg",
+  "c04-03.jpg",
+  "c04-04.jpg",
+  "c04-05.jpg",
+  "c04-06.jpg",
+  "c04-07.jpg",
+  "c04-08.jpg"
+ ],
+ "04r": [
+  "r04-cover.jpg",
+  "r04.mp4"
+ ],
+ "01sc": [
+  "c01s-01.jpg",
+  "c01s-02.jpg",
+  "c01s-03.jpg",
+  "c01s-04.jpg",
+  "c01s-05.jpg"
+ ],
+ "01sr": [
+  "r01s-cover.jpg",
+  "r01s.mp4"
+ ],
+ "01qc": [
+  "c01q-01.jpg"
+ ],
+ "02sc": [
+  "c02s-01.jpg",
+  "c02s-02.jpg",
+  "c02s-03.jpg",
+  "c02s-04.jpg",
+  "c02s-05.jpg"
+ ],
+ "02sr": [
+  "r02s-cover.jpg",
+  "r02s.mp4"
+ ],
+ "02qc": [
+  "c02q-01.jpg"
+ ],
+ "03sc": [
+  "c03s-01.jpg",
+  "c03s-02.jpg",
+  "c03s-03.jpg",
+  "c03s-04.jpg",
+  "c03s-05.jpg"
+ ],
+ "03sr": [
+  "r03s-cover.jpg",
+  "r03s.mp4"
+ ]
+}
