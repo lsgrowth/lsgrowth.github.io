@@ -2,38 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lsgrowth.github.io/</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://lsgrowth.github.io/columns/</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
-    <loc>https://lsgrowth.github.io/columns/01.html</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://lsgrowth.github.io/faq/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://lsgrowth.github.io/diagnosis/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://lsgrowth.github.io/guide/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://lsgrowth.github.io/privacy/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://lsgrowth.github.io/guide/how-to-choose-hospital-marketing-agency/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://lsgrowth.github.io/guide/before-opening-consulting/</loc>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://lsgrowth.github.io/columns/02.html</loc>
     <lastmod>2026-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lsgrowth.github.io/columns/03.html</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-11-21</lastmod>
   </url>
   <url>
     <loc>https://lsgrowth.github.io/columns/04.html</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-11-22</lastmod>
   </url>
 </urlset>

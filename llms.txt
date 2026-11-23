@@ -1,0 +1,28 @@
+# LS 병원성장연구소
+
+> LS 병원성장연구소는 병원마케팅 대행을 기본으로 병원 종합 컨설팅을 하는 연구소입니다. 병원이 지속적으로 성장하도록 재진 구조·상담·운영·성장 로드맵까지 함께 설계합니다. 건강보험수가개발 연구원 출신의 병원 전문 컨설턴트 LS 연구소장이 보건의료 현장 18년의 경험으로 병원을 진단합니다.
+
+## 핵심 정보
+
+- [병원 성장 가이드](https://lsgrowth.github.io/guide/): 병원마케팅대행사 선택, 개원컨설팅 준비 등 의사결정 기준을 질문과 답으로 정리한 정보 글 모음
+- [병원마케팅대행사는 어떻게 고르면 되나요? 계약 전 확인할 6가지 기준](https://lsgrowth.github.io/guide/how-to-choose-hospital-marketing-agency/): 병원마케팅대행사는 "잘한다"는 말보다 무엇을·어떤 기준으로·어떻게 보고할지 문서로 약속하는지로 고릅니다. 계약 전 확인할 6가지 기준과 체크리스트를 정리했습니다.
+- [개원컨설팅을 받기 전에 원장님이 먼저 정리할 것은 무엇인가요?](https://lsgrowth.github.io/guide/before-opening-consulting/): 개원컨설팅은 원장님이 정한 기준을 실행하도록 돕는 일입니다. 상담 전에 먼저 정리할 것과 컨설팅사에 물어볼 질문, 원장님 체크리스트를 정리했습니다.
+
+## 핵심 페이지
+
+- [메인](https://lsgrowth.github.io/): 연구소 소개, 진행 방식, 무료 진단
+- [무료 진단](https://lsgrowth.github.io/diagnosis/): 신청부터 결과 정리까지 진행 순서와 비밀 보장
+- [자주 묻는 질문](https://lsgrowth.github.io/faq/): 병원 마케팅 대행 비용, 의료광고 심의, 개원 준비 등
+- [연구소장 노트](https://lsgrowth.github.io/columns/): 연구소장이 직접 쓴 병원 현장 칼럼 모음
+
+## 연구소장 노트
+
+- [#02 원장님, 신환보다 재진입니다. 재진 재진 재진. 재재재진. | 병원 재진율 높이는 방법](https://lsgrowth.github.io/columns/02.html): 나는 보통 병원 컨설팅 및 마케팅 계약을 기본 6개월로 진행한다. 6개월이면 대부분의 병원이 개원 후 최고 매출을 찍는다.
+- [#03 의사들은 정말 똑똑할까? 근데 왜 병원 장사가 안될까? | 병원 경영이 어려운 이유](https://lsgrowth.github.io/columns/03.html): 김똘똘이라는 의사가 있다고 가정해 보자. 똘똘 선생님은 현재 강남 어느 미용 병원에서 한 달 1,500만 원가량의 실수령액을 받으면서 페이닥터로 일하고 있다.
+- [#04 병원마케팅이 쉽냐? 쉽지! 병원성장이 쉽냐? 개어렵지! | 병원컨설팅](https://lsgrowth.github.io/columns/04.html): &quot;아 대표님, 도대체 병원마케팅 어떻게 해야 됩니까? 돈도 엄청 태웠는데 너무 어려워요.&quot; 이 질문, 내가 제일 많이 받는 질문 중 탑5 안에 들지 않을까?
+
+## 문의
+
+- 무료 진단 신청: https://docs.google.com/forms/d/e/1FAIpQLScgscJzu-_umpK5T391qhe0d7Zhl0t5ld2U17WTYjD9tdr5nw/viewform
+- 카카오톡 문의: https://open.kakao.com/o/sKxRxWXi
+- 이메일: aujy0721@gmail.com
