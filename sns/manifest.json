@@ -172,6 +172,15 @@
   "r28s-cover.jpg",
   "r28s.mp4"
  ],
+ "06c": [
+  "c06-01.jpg",
+  "c06-02.jpg",
+  "c06-03.jpg",
+  "c06-04.jpg",
+  "c06-05.jpg",
+  "c06-06.jpg",
+  "c06-07.jpg"
+ ],
  "05ar": [
   "r05a-cover.jpg",
   "r05a.mp4"
@@ -183,5 +192,17 @@
  "05sr": [
   "r05s-cover.jpg",
   "r05s.mp4"
+ ],
+ "06ar": [
+  "r06a-cover.jpg",
+  "r06a.mp4"
+ ],
+ "06br": [
+  "r06b-cover.jpg",
+  "r06b.mp4"
+ ],
+ "06cr": [
+  "r06c-cover.jpg",
+  "r06c.mp4"
  ]
 }
