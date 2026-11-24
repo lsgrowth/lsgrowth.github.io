@@ -386,7 +386,7 @@ html.motion .report .bar-row:nth-child(3) .fill{animation-delay:.29s}
 html.motion .report .bar-row:nth-child(4) .fill{animation-delay:.41s}
 html.motion .report .bar-row:nth-child(5) .fill{animation-delay:.53s}
 html.motion .rv:not(.in){opacity:0;transform:translateY(16px)}
-html.motion .rv.in{opacity:1;transform:none;transition:opacity .45s ease-out,transform .45s ease-out;transition-delay:var(--d,0s)}
+html.motion .rv.in{opacity:1;transform:none;transition:opacity .7s ease-out,transform .7s ease-out;transition-delay:var(--d,0s)}
 html.motion .hl.hl-w{background-repeat:no-repeat;background-position:left center;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 html.motion .hl.hl-w:not(.in){background-size:0% 100%}
 html.motion .hl.hl-w.in{background-size:100% 100%;transition:background-size .6s ease-out}
@@ -498,7 +498,7 @@ html.motion .hl.hl-w.in{background-size:100% 100%;transition:background-size .6s
 @keyframes lnrise{from{transform:translateY(10px)}to{transform:none}}
 @keyframes ulgrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 html.motion .h1 .ln{animation:lnrise .5s ease-out both;animation-delay:calc(var(--i)*.15s)}
-html.motion .h1 .sj::after{transform-origin:left center;animation:ulgrow .5s ease-out both;animation-delay:calc(var(--i)*.15s)}
+html.motion .h1 .sj::after{transform-origin:left center;animation:ulgrow .9s ease-out both;animation-delay:calc(var(--i)*.4s)}      /* 밑줄 3개: 각 0.9초, 줄 사이 0.4초 → 1.7초에 끝 */
 
 /* 지금 개원 시장 카드 = 전후 비교 막대 3칸 */
 .mk-card{padding:22px 28px 18px}
@@ -516,7 +516,7 @@ html.motion .h1 .sj::after{transform-origin:left center;animation:ulgrow .5s eas
 .bar .f.dk{background:var(--ink)}
 .bar .f.lt{background:#DEDAD2}
 .mk-card.bar-w:not(.go) .f,.nums.bar-w:not(.go) .num::after{transform:scaleX(0)}
-.mk-card.bar-w.go .f{transform:none;transition:transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.mk-card.bar-w.go .f{transform:none;transition:transform 1.3s ease-out}      /* 카운트업과 같은 길이 */
 
 /* 연구소장 경력 띠 4칸 */
 .career .nums{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 24px}
@@ -525,9 +525,9 @@ html.motion .h1 .sj::after{transform-origin:left center;animation:ulgrow .5s eas
 .career .nums .num::after{content:"";position:absolute;left:0;bottom:0;width:40px;height:4px;border-radius:2px;background:var(--lemon);transform-origin:left center}
 .career .nums .nl{margin:10px 0 0;font-size:15px;line-height:1.45;color:var(--on-ink)}
 .career-line{margin-top:28px}
-.career .nums.bar-w.go .num::after{transform:none;transition:transform .5s ease-out .5s}
+.career .nums.bar-w.go .num::after{transform:none;transition:transform 1.8s ease-out;transition-delay:calc(var(--k)*.2s)}
 .career .nums.bar-w:not(.go)>div{transform:translateY(14px)}
-.career .nums.bar-w.go>div{transform:none;transition:transform .45s ease-out;transition-delay:calc(var(--k)*.08s)}
+.career .nums.bar-w.go>div{transform:none;transition:transform .45s ease-out;transition-delay:calc(var(--k)*.2s)}
 
 /* 내원 5단계: 그림 먼저, 설명 아래 */
 .funnel{margin:0 0 28px}
@@ -540,7 +540,7 @@ html.motion .h1 .sj::after{transform-origin:left center;animation:ulgrow .5s eas
 .funnel .fs.last rect{fill:var(--lemon);stroke:var(--ink)}
 .funnel .fs.last .t2{fill:var(--ink)}
 .funnel.fn-w:not(.go) .fs{opacity:.25}
-.funnel.fn-w.go .fs{opacity:1;transition:opacity .35s ease-out;transition-delay:calc(var(--i)*.1s)}
+.funnel.fn-w.go .fs{opacity:1;transition:opacity .35s ease-out;transition-delay:calc(var(--i)*.3s)}      /* 칸·화살표 0.3초 간격 */
 .steplist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
 .steplist li{font-size:15px;line-height:1.6;color:var(--body);padding-top:12px;border-top:2px solid var(--ink)}
 .steplist li:last-child{border-top-color:var(--lemon)}

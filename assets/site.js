@@ -58,20 +58,30 @@
         box.classList.add('bar-w');
         for (var kk = 0; kk < box.children.length; kk++) box.children[kk].style.setProperty('--k', kk);
       }
+      var isMk = box.classList.contains('mk-card');
+      var DUR = isMk ? 1300 : (box.closest('.career') ? 1800 : 1200);      // 히어로 카드 1.3초(첫 화면 전체 3초 이내) · 경력 띠 1.8초
+      var OFF = box.closest('.career') ? 200 : 0;      // 경력 띠는 칸마다 0.2초 간격
       new IntersectionObserver(function (es, ob) {
         if (!es[0].isIntersecting) return;
         ob.disconnect();
-        box.classList.add('go');      // 막대·밑줄·칸 떠오르기 시작
-        var t0 = null, D = 1200;
-        function step(t) {
-          if (t0 === null) t0 = t;
-          var p = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - p, 3);
-          for (var i = 0; i < cus.length; i++) cus[i].textContent = fmt(to[i] * e, dec[i], comma[i]);
-          if (p < 1) requestAnimationFrame(step);
-          else for (var j = 0; j < cus.length; j++) cus[j].textContent = orig[j];      // 끝에는 HTML 에 적힌 최종값 그대로
-        }
         for (var k = 0; k < cus.length; k++) cus[k].textContent = fmt(0, dec[k], comma[k]);
-        requestAnimationFrame(step);
+        // 히어로 숫자 카드는 H1 밑줄 3개(0.9초 × 3, 0.4초 간격 = 1.7초)가 모두 끝난 뒤에 시작한다
+        var wait = isMk ? Math.max(0, 1700 - (window.performance ? performance.now() : 0)) : 0;
+        setTimeout(function () {
+          box.classList.add('go');      // 막대·밑줄·칸 떠오르기 시작
+          var t0 = null;
+          function step(t) {
+            if (t0 === null) t0 = t;
+            var done = true;
+            for (var i = 0; i < cus.length; i++) {
+              var p = Math.max(0, Math.min(1, (t - t0 - i * OFF) / DUR)), e = 1 - Math.pow(1 - p, 3);
+              if (p < 1) { done = false; cus[i].textContent = fmt(to[i] * e, dec[i], comma[i]); }
+              else cus[i].textContent = orig[i];      // 끝에는 HTML 에 적힌 최종값 그대로
+            }
+            if (!done) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }, wait);
       }, { threshold: th || 0.4 }).observe(box);
     }
     var boxes = document.querySelectorAll('.nums, .mk-card');
@@ -105,7 +115,7 @@
         vis.forEach(function (e) {
           var top = Math.round(e.boundingClientRect.top / 8);
           if (rowTop === null || Math.abs(top - rowTop) > 2) { rowTop = top; idx = 0; }
-          e.target.style.setProperty('--d', (idx * 0.06).toFixed(2) + 's'); idx++;
+          e.target.style.setProperty('--d', (idx * 0.1).toFixed(2) + 's'); idx++;
           e.target.classList.add('in'); rio.unobserve(e.target);
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
