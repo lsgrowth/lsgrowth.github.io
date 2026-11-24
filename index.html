@@ -80,106 +80,50 @@
 </header>
 
 <main id="main">
-  <!-- 첫 화면: 잉크 배경 + 크림 제목, 핵심 단어 1개만 레몬 -->
+  <!-- 첫 화면: 잉크 배경. H1 = 문제 제기, 부제 = 우리가 하는 일, 오른쪽(모바일은 버튼 아래) = 지금 개원 시장 숫자 3개 -->
   <section class="hero-ink on-ink">
     <div class="hero-in">
       <div class="hero-txt">
         <p class="eyebrow ko">병원마케팅 대행 · 병원 종합 컨설팅</p>
-        <h1 class="h1">마케팅은 기본입니다.<br>병원의 <span class="y">성장 구조</span>까지<br>함께 설계합니다.</h1>
-        <p class="hero-lead">건강보험수가개발 연구원 출신 병원 전문 컨설턴트가, 마케팅만이 아니라 병원 매출이 어디서 만들어지는지부터 직접 진단합니다.</p>
+        <h1 class="h1">의대 정원은 증원됐고,<br>인구 절벽은 시작됐으며,<br>병원 수는 지금도 늘고 있습니다.</h1>
+        <p class="hero-sub">병원마케팅은 기본입니다. <br>병원의 <span class="y">성장 구조</span>까지 함께 설계합니다.</p>
         <div class="ctas hero-ctas">
           <a class="btn solid" data-cta="main-hero" href="https://docs.google.com/forms/d/e/1FAIpQLScgscJzu-_umpK5T391qhe0d7Zhl0t5ld2U17WTYjD9tdr5nw/viewform?usp=pp_url&amp;entry.1623832531=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80" target="_blank" rel="noopener">무료 진단 신청하기</a>
           <a class="btn line" href="columns/">연구소장 노트 읽기 <span class="arrow">→</span></a>
         </div>
         <p class="hero-note">약 3분 · 24시간 안에 연구소장이 직접 연락드립니다</p>
       </div>
-      <div class="report hide-m" aria-label="진단 리포트 구성 예시">
-        <div class="rp-head"><p class="tag">DIAGNOSIS REPORT</p><span class="ex">구성 예시</span></div>
-        <p class="rp-title">우리 병원 내원 5단계 점검</p>
-        <div class="bars">
-          <div class="bar-row"><span>노출</span><div class="track" aria-hidden="true"><div class="fill" style="width:78%"></div></div></div>
-          <div class="bar-row"><span>클릭</span><div class="track" aria-hidden="true"><div class="fill" style="width:62%"></div></div></div>
-          <div class="bar-row"><span>정보</span><div class="track" aria-hidden="true"><div class="fill" style="width:70%"></div></div></div>
-          <div class="bar-row"><span>설득</span><div class="track" aria-hidden="true"><div class="fill t" style="width:38%"></div></div></div>
-          <div class="bar-row"><span>내원</span><div class="track" aria-hidden="true"><div class="fill t" style="width:30%"></div></div></div>
-        </div>
-        <div class="rp-list">
-          <span>① 병원 수요·상권 기반 진단 리포트</span>
-          <span>② 연구소장과 1:1 전략 미팅</span>
-          <span>③ 지금 필요한 마케팅 방향과 실행 계획</span>
-        </div>
+      <div class="mk-card" aria-label="지금 개원 시장">
+        <p class="tag">지금 개원 시장</p>
+        <div class="mk-row"><p class="mnum"><span class="cu" data-to="3548" data-comma="1">3,548</span>명</p><p class="ml">2027학년도 의대 정원 (2024년&nbsp;3,058명)</p></div>
+        <div class="mk-row"><p class="mnum"><span class="cu" data-to="0.8" data-dec="2">0.80</span>명</p><p class="ml">2025년 합계출산율 · OECD 유일 1명&nbsp;미만</p></div>
+        <div class="mk-row"><p class="mnum"><span class="cu" data-to="1840" data-comma="1">1,840</span>곳</p><p class="ml">2025년 새로 문 연 의원 (폐업&nbsp;1,011곳)</p></div>
+        <p class="mkt-src">출처: 건강보험심사평가원 요양기관 개·폐업 현황(2025), 국가데이터처 2025년 출생통계, 교육부·보건복지부 2027학년도 의대 정원 발표</p>
       </div>
     </div>
   </section>
 
-  <!-- 지금 개원 시장: 크림 배경, 잉크 숫자(크림 위 레몬 글자 금지). 숫자는 매년 2~3월 발표 후 갱신(TODO) -->
-  <section class="mkt" aria-labelledby="mkt-h">
-    <div class="mkt-in">
-      <p class="eyebrow ko">지금 개원 시장</p>
-      <h2 id="mkt-h">병원은 늘고,<br class="m-br"> 인구 구조는 바뀌고 있습니다.</h2>
-      <div class="mkt-nums">
-        <div><p class="mnum"><span class="cu" data-to="1840" data-comma="1">1,840</span>곳</p><p class="ml">2025년 새로 문 의원 (폐업&nbsp;1,011곳)</p></div>
-        <div><p class="mnum"><span class="cu" data-to="0.8" data-dec="2">0.80</span>명</p><p class="ml">2025년 합계출산율 · OECD 유일 1명&nbsp;미만</p></div>
-        <div><p class="mnum"><span class="cu" data-to="3548" data-comma="1">3,548</span>명</p><p class="ml">2027학년도 의대 정원 (2024년&nbsp;3,058명)</p></div>
-      </div>
-      <p class="mkt-txt">광고를 더 하는 병원보다, <span class="hl">환자가 들어와 다시 오는 구조</span>를 갖춘 병원이 남습니다. LS는 그 구조에서 어디가 막혔는지부터 진단합니다.</p>
-      <p class="mkt-src">출처: 건강보험심사평가원 요양기관 개·폐업 현황(2025), 국가데이터처 2025년 출생통계, 교육부·보건복지부 2027학년도 의대 정원 발표</p>
-    </div>
-  </section>
-
-  <!-- 신뢰 숫자: 잉크 배경 + 레몬 숫자 + 각주 -->
-  <section class="nums-sec on-ink" aria-label="연구소장 소개 숫자">
+  <!-- 연구소장 3대 경력 띠: 보건의료 18년 → 건강보험수가 연구개발 6년 → 병원 컨설팅 300곳 이상 -->
+  <section class="nums-sec career on-ink" aria-labelledby="career-h">
     <div class="nums-in">
+      <p class="eyebrow ko">연구소장</p>
+      <h2 id="career-h">이 변화를 18년 동안 현장에서 지켜봤습니다.</h2>
       <div class="nums">
-        <div><p class="num"><span class="cu" data-to="18">18</span>년</p><p class="nl">보건의료 업계</p></div>
-        <div><p class="num"><span class="cu" data-to="4">4</span>개국</p><p class="nl">한국·미국·캐나다·호주 의료 환경</p></div>
-        <div><p class="num"><span class="cu" data-to="300">300</span>곳+</p><p class="nl">병원 미팅·컨설팅</p></div>
-        <div><p class="num">10곳 중 <span class="cu" data-to="9">9</span>곳<sup>¹</sup></p><p class="nl">6개월 뒤 개원 후 최고 매출</p></div>
+        <div><p class="num"><span class="cu" data-to="18">18</span>년</p><p class="nl">보건의료</p></div>
+        <div><p class="num"><span class="cu" data-to="6">6</span>년</p><p class="nl">건강보험수가 연구개발</p></div>
+        <div><p class="num"><span class="cu" data-to="300">300</span>곳+</p><p class="nl">병원 컨설팅</p></div>
       </div>
+      <p class="career-line">한국·미국·캐나다·호주 4개국 의료 현장을 경험한, 건강보험수가개발 연구원 출신 병원 전문 컨설턴트가 직접 진단합니다.</p>
       <a class="nums-link" href="about/">연구소장 소개 <span class="arrow">→</span></a>
-      <p class="nums-foot">¹ LS와 6개월 함께한 병원 기준, LS 병원성장연구소 자체 컨설팅 데이터 기준</p>
-      <!-- TODO(대표님·숨김): 300곳+ 각주(무엇을 언제 기준으로 셌는지). 정해지면 위 각주 줄에 넣는다 -->
-    </div>
-  </section>
-
-  <!-- 이런 원장님께 -->
-  <section class="sec" id="problems">
-    <p class="eyebrow">For Doctors</p>
-    <h2>이런 원장님께</h2>
-    <div class="grid3">
-      <div class="mcard">
-        <p class="t">신환은 느는데 매출은 그대로라면</p>
-        <p class="q"><span class="hl">“원장님, 신환은 계속 보내 드릴게요. 그런데 재진은 어떻게 늘리실 계획이세요?”</span></p>
-        <p class="d s">LS가 6개월 뒤 원장님께 꼭 드리는 질문입니다.</p>
-      </div>
-      <div class="mcard">
-        <p class="t">대행사를 바꿔도 그대로라면</p>
-        <p class="d">채널을 바꾸기 전에, 환자가 왜 우리 병원을 고르지 않는지부터 봐야 합니다.</p>
-      </div>
-      <div class="mcard">
-        <p class="t">개원 후 무엇부터 할지 모르겠다면</p>
-        <p class="d">개원은 사업입니다. 무엇부터 할지 순서를 잡아 드립니다.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- LS의 약속 -->
-  <section class="sec nt" id="promise">
-    <p class="eyebrow">LS Promise</p>
-    <h2 class="h2 tight">LS의 약속</h2>
-    <p class="sub">처음 상담부터 매달 보고까지, 지키는 기준은 세 가지입니다.</p>
-    <div class="grid3 p">
-      <div class="promise dark"><div class="ph"><span class="pt">연구소장 직접 진단</span><span class="pn">01</span></div><p>전국 어디든 대면으로 만나, 연구소장이 직접 병원을 보고 진단합니다.</p></div>
-      <div class="promise"><div class="ph"><span class="pt">6개월 로드맵 + 매달 보고서</span><span class="pn">02</span></div><p>병원별 성장 로드맵을 드리고, 지난달 무엇이 바뀌었고 다음 달 무엇을 할지 매달 보고합니다.</p></div>
-      <div class="promise"><div class="ph"><span class="pt">의료법 준수, 안 되면 솔직하게</span><span class="pn">03</span></div><p>모든 콘텐츠는 의료법 기준으로 내부 검토합니다. 도울 수 없다고 판단하면 진단에서 솔직하게 말씀드립니다.</p></div>
+      <!-- TODO(대표님·숨김): 300곳+ 각주(무엇을 언제 기준으로 셌는지). 정해지면 위에 한 줄 추가 -->
     </div>
   </section>
 
   <!-- 내원 5단계 -->
-  <section class="sec nt" id="method">
+  <section class="sec" id="method">
     <p class="eyebrow">Method</p>
-    <h2 class="h2 tight">LS가 일하는 방식: 내원 5단계</h2>
-    <p class="sub">잘나가는 회사는 유능한 직원 한 명이 그만둬도 계속 잘나갑니다. <span class="hl"><b>구조와 시스템이 있으니까요.</b></span> 병원도 같습니다.</p>
+    <h2 class="h2 tight">광고보다 먼저, 환자가 오기까지 5단계를 봅니다.</h2>
+    <p class="sub">광고를 더 하는 병원보다, <span class="hl">환자가 들어와 다시 오는 구조</span>를 갖춘 병원이 남습니다.</p>
     <ol class="steps5" aria-label="내원 5단계">
       <li class="st"><p class="sl">STEP 01</p><p class="sn">노출</p><p class="ss">채널</p><p class="sd">일단 눈에 띄어야 시작입니다. 상황과 예산에 맞게 채널을 설계합니다.</p></li>
       <li class="st"><p class="sl">STEP 02</p><p class="sn">클릭</p><p class="ss">직관</p><p class="sd">경쟁 병원이 아니라 우리 병원을 클릭하게 만듭니다.</p></li>
@@ -193,7 +137,8 @@
   <!-- 사례 -->
   <section class="sec nt" id="proof">
     <p class="eyebrow">Cases</p>
-    <h2>함께한 병원</h2>
+    <h2 class="h2 tight">함께한 병원</h2>
+    <p class="sub">LS와 6개월 함께한 병원 10곳 중 9곳이 개원 후 최고 매출을 기록했습니다<sup>¹</sup></p>
     <div class="grid3">
       <div class="mcard case">
         <span class="who">경기도 S치과</span>
@@ -212,6 +157,7 @@
         <p class="desc">비대면 진료 환자와 지방·해외 한약 고객 중심의 온라인 구조로 전환했습니다.</p>
       </div>
     </div>
+    <p class="fine">¹ LS와 6개월 함께한 병원 기준, LS 병원성장연구소 자체 컨설팅 데이터 기준</p>
     <p class="fine">사례는 병원의 동의를 받았거나, 병원이 특정되지 않도록 각색했습니다.</p>
   </section>
 
@@ -241,13 +187,16 @@
     <div class="wrap">
       <div class="txt">
         <p class="eyebrow">Free Diagnosis</p>
-        <h2>우리 병원의 본질과 성장 구조,<br>무료로 진단받아 보세요.</h2>
-        <p>신청하시면 연구소장이 24시간 안에 직접 연락드립니다. 실제 병원에 드리는 로드맵과 월간 보고서 예시도 함께 보여 드립니다.</p>
+        <h2>우리 병원은 어디서 막혔을까요?<br> 무료로 진단받아 보세요.</h2>
+        <p>신청하시면 연구소장이 24시간 안에 직접 연락드립니다.</p>
         <p class="small">원장님의 매출이 저희 이익보다 우선입니다. 그래야 더 오래 함께 일할 수 있으니까요.</p>
       </div>
-      <div class="ctas">
-        <a class="btn solid" data-cta="main-final" href="https://docs.google.com/forms/d/e/1FAIpQLScgscJzu-_umpK5T391qhe0d7Zhl0t5ld2U17WTYjD9tdr5nw/viewform?usp=pp_url&amp;entry.1623832531=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80" target="_blank" rel="noopener">무료 진단 신청하기</a>
-        <a class="btn kakao" data-cta="main-final-kakao" href="https://open.kakao.com/o/sKxRxWXi" target="_blank" rel="noopener">카톡으로 먼저 물어보기</a>
+      <div class="act">
+        <ul class="checks3"><li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5D33B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>연구소장이 전국 어디든 직접 만나 진단합니다</span></li><li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5D33B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>실제 병원에 드리는 로드맵·월간 보고서 예시를 보여 드립니다</span></li><li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5D33B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>의료법상 안 되는 것은 진단에서 솔직하게 말씀드립니다</span></li></ul>
+        <div class="ctas">
+          <a class="btn solid" data-cta="main-final" href="https://docs.google.com/forms/d/e/1FAIpQLScgscJzu-_umpK5T391qhe0d7Zhl0t5ld2U17WTYjD9tdr5nw/viewform?usp=pp_url&amp;entry.1623832531=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80" target="_blank" rel="noopener">무료 진단 신청하기</a>
+          <a class="btn kakao" data-cta="main-final-kakao" href="https://open.kakao.com/o/sKxRxWXi" target="_blank" rel="noopener">카톡으로 먼저 물어보기</a>
+        </div>
       </div>
     </div>
   </section>

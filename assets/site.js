@@ -48,7 +48,7 @@
       if (comma) { var q = s.split('.'); q[0] = q[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); s = q.join('.'); }
       return s;
     }
-    function countUp(box) {
+    function countUp(box, th) {
       var cus = box.querySelectorAll('.cu'), to = [], dec = [], comma = [], orig = [];
       for (var i = 0; i < cus.length; i++) {
         to.push(parseFloat(cus[i].getAttribute('data-to'))); dec.push(parseInt(cus[i].getAttribute('data-dec') || '0', 10));
@@ -67,10 +67,10 @@
         }
         for (var k = 0; k < cus.length; k++) cus[k].textContent = fmt(0, dec[k], comma[k]);
         requestAnimationFrame(step);
-      }, { threshold: 0.4 }).observe(box);
+      }, { threshold: th || 0.4 }).observe(box);
     }
-    var boxes = document.querySelectorAll('.nums, .mkt-nums');
-    for (var bx = 0; bx < boxes.length; bx++) countUp(boxes[bx]);
+    var boxes = document.querySelectorAll('.nums, .mk-card');
+    for (var bx = 0; bx < boxes.length; bx++) countUp(boxes[bx], boxes[bx].classList.contains('mk-card') ? 0.2 : 0.4);      // 히어로 카드는 화면에 보이는 즉시(로드 직후) 한 번
 
     /* 8) 형광펜 그어지기 */
     var hls = document.querySelectorAll('.hl');
@@ -82,8 +82,8 @@
     }
 
     /* 10) 카드 떠오르기: 첫 화면 아래 섹션의 제목·카드, 같은 줄은 0.06초씩 차례로 */
-    var rv = document.querySelectorAll('.sec > .eyebrow, .sec > h2, .sec .sub, .notes-side > *, .mcard, .promise, .st, .notecard, .mkt-in > .eyebrow, .mkt-in > h2, .mkt-nums > div, .mkt-txt');
-    if (rv.length) {
+    var rv = !document.querySelector('.hero-ink') ? [] : document.querySelectorAll('.sec > .eyebrow, .sec > h2, .sec .sub, .notes-side > *, .mcard, .promise, .st, .notecard');
+    if (rv.length) {      // 카드 떠오르기는 메인(히어로가 있는 페이지)에서만
       var rio = new IntersectionObserver(function (es) {
         var vis = es.filter(function (e) { return e.isIntersecting; });
         vis.sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left; });

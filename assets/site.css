@@ -282,10 +282,10 @@ a.card:hover{border-color:var(--ink);color:var(--ink)}
 .hero-in{max-width:1200px;margin:0 auto;padding:64px 24px 72px;display:flex;flex-wrap:wrap;gap:48px;align-items:center}
 .hero-txt{flex:1 1 540px;min-width:0}
 .hero-ink .eyebrow{margin:0 0 20px;color:var(--tangerine)}
-.h1{font-size:64px;line-height:1.18;letter-spacing:-.03em;margin:0;font-weight:900;color:var(--cream)}
+.h1{font-size:clamp(26px,3.6vw,52px);line-height:1.2;letter-spacing:-.03em;margin:0;font-weight:900;color:var(--cream)}
 .h1 .y{color:var(--lemon)}
 .hero-lead{margin:28px 0 0;color:var(--on-ink);max-width:560px}
-.hero-ctas{margin-top:36px}
+.hero-ctas{margin-top:32px}
 .hero-note{margin:14px 0 0;font-size:14px;color:var(--on-ink-dim)}
 .report{flex:0 1 400px;min-width:0;background:var(--cream);color:var(--ink);border-radius:20px;padding:28px}
 .report .rp-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
@@ -360,8 +360,7 @@ a.card:hover{border-color:var(--ink);color:var(--ink)}
 
 @media (max-width:899px){
   .hide-m{display:none!important}
-  .h1{font-size:36px}
-  .hero-in{padding-top:48px;padding-bottom:56px;gap:32px}
+  .hero-in{padding-top:36px;padding-bottom:40px;gap:24px}
   .nums{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}
   .nums .num{font-size:32px}
   .sec{padding-top:64px;padding-bottom:64px}
@@ -397,30 +396,94 @@ html.motion .hl.hl-w.in{background-size:100% 100%;transition:background-size .6s
   .report .fill{animation:none!important;transform:none!important}
 }
 
-/* 지금 개원 시장(크림 배경, 잉크 숫자) */
-.mkt{background:var(--cream)}
-.mkt-in{max-width:1200px;margin:0 auto;padding:96px 24px}
-.mkt-in h2{font-size:42px;line-height:1.28;letter-spacing:-.025em;margin:12px 0 36px;font-weight:900}
-.mkt-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-.mkt-nums>div{padding:6px 32px;border-left:1px solid var(--line)}
-.mkt-nums>div:first-child{padding-left:0;border-left:0}
-.mkt-nums>div:last-child{padding-right:0}
-.mnum{margin:0;font-weight:800;font-size:46px;letter-spacing:-.03em;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums}
+/* 5차: 히어로 부제 + 지금 개원 시장 카드 */
+.hero-sub{margin:24px 0 0;font-size:26px;line-height:1.45;font-weight:700;letter-spacing:-.02em;color:var(--cream);max-width:620px}
+.hero-sub .y{color:var(--lemon)}
+.hero-txt{flex:1 1 560px}
+.mk-card{flex:0 1 400px;min-width:0;background:var(--cream);color:var(--ink);border-radius:20px;padding:26px 28px 22px}
+.mk-card .tag{margin:0 0 6px;font-size:12px;letter-spacing:.06em;font-weight:700;color:var(--tangerine-text)}
+.mk-row{padding:14px 0;border-top:1px solid var(--line)}
+.mk-row:first-of-type{border-top:0}
+.mnum{margin:0;font-weight:800;font-size:40px;letter-spacing:-.03em;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums}
 .mnum .cu{font-variant-numeric:tabular-nums}
-.ml{margin:8px 0 0;font-size:15px;color:var(--body);word-break:keep-all}
-.m-br{display:none}
-.mkt-txt{margin:36px 0 0;max-width:680px;color:var(--body)}
-.mkt-src{margin:20px 0 0;max-width:760px;font-size:13px;line-height:1.6;color:var(--body)}
+.ml{margin:6px 0 0;font-size:14px;line-height:1.5;color:var(--body);word-break:keep-all}
+.mkt-src{margin:10px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.55;color:var(--body)}
+
+/* 연구소장 3대 경력 띠 */
+.career h2{font-size:42px;line-height:1.28;letter-spacing:-.025em;margin:12px 0 32px;font-weight:900;color:var(--cream)}
+.career .nums{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}
+.career-line{margin:28px 0 0;max-width:680px;color:var(--on-ink);font-size:17px}
+.career .nums-link{margin-top:20px}
+
+/* 신청 밴드: 체크 3줄 */
+.band .act{flex:0 1 auto;max-width:100%;display:flex;flex-direction:column;gap:22px}
+.checks3{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.checks3 li{display:flex;gap:10px;align-items:flex-start;color:var(--cream);font-size:16px;line-height:1.5}
+.checks3 svg{flex:none;margin-top:2px}
+.band .act .ctas{flex:0 0 auto}
+
+/* 소개·진단·서비스에 옮긴 부분 */
+.ledger.three{grid-template-columns:repeat(3,1fr)}
+.about-sub{margin:18px 0 8px;max-width:40em}
+.lead3.tight{margin:0 0 24px}
+.for-doctors .grid3{margin-top:4px}
+.svc .intro-m{margin:0 0 10px;max-width:44em}
+
 @media (max-width:899px){
-  .mkt-in{padding-top:40px;padding-bottom:36px}
-  .mkt-in h2{font-size:24px;margin:8px 0 18px}
-  .m-br{display:inline}
-  .mkt-nums{grid-template-columns:minmax(0,1fr)}
-  .mkt-nums>div{display:grid;grid-template-columns:106px minmax(0,1fr);align-items:center;column-gap:12px;padding:9px 0;border-left:0;border-top:1px solid var(--line)}
-  .mkt-nums>div:first-child{border-top:0;padding-top:0}
-  .mkt-nums>div:last-child{padding-right:0;padding-bottom:9px}
+  .hero-sub{font-size:18px;margin-top:16px}
+  .mk-card{flex:1 1 100%;padding:20px 20px 16px}
+  .mk-row{display:grid;grid-template-columns:112px minmax(0,1fr);align-items:center;column-gap:12px;padding:10px 0}
   .mnum{font-size:26px}
   .ml{margin:0;font-size:13.5px;line-height:1.4}
-  .mkt-txt{margin-top:14px;font-size:16px;line-height:1.6}
-  .mkt-src{margin-top:10px}
+  .mkt-src{font-size:12px}
+  .career h2{font-size:26px;margin-bottom:20px}
+  .career .nums{grid-template-columns:minmax(0,1fr);gap:0}
+  .career .nums>div{display:grid;grid-template-columns:104px minmax(0,1fr);align-items:center;column-gap:12px;padding:10px 0;border-top:1px solid #2A2A2A}
+  .career .nums>div:first-child{border-top:0}
+  .career .nums .num{font-size:30px}
+  .career .nums .nl{margin:0}
+  .career-line{font-size:16px;margin-top:18px}
+  .ledger.three{grid-template-columns:1fr 1fr}
 }
+
+/* 5차: 모바일 압축(목표 길이 4,500px 이하) */
+@media (max-width:899px){
+  .h1{font-size:25px;line-height:1.25}
+  .hero-sub{font-size:17px;margin-top:14px;line-height:1.5}
+  .hero-ctas{margin-top:20px}
+  .hero-note{margin-top:10px}
+  .mk-card{margin-top:4px}
+  .nums-in{padding:36px 24px 40px}
+  .sec{padding-top:44px;padding-bottom:44px}
+  .sec.nt{padding-top:0}
+  .sec>h2,.sec .h2,.notes-side h2{font-size:24px;margin:8px 0 14px}
+  .sec .h2.tight{margin-bottom:8px}
+  .sec .sub{margin-bottom:20px;font-size:16px}
+  .mcard{padding:18px}
+  .case{gap:8px}
+  .case .quote{font-size:19px;line-height:1.45}
+  .case .desc{font-size:14px;line-height:1.55}
+  .st{padding:11px 14px}
+  .st .sd{font-size:13.5px;line-height:1.45}
+  .more-link{margin-top:18px}
+  .fine{margin-top:12px}
+  .notes-sec{gap:20px}
+  .notes-side p{font-size:16px}
+  .notecard{min-height:170px;gap:14px;padding:20px}
+  .notecard .nt{font-size:26px}
+  .band .wrap{padding-top:44px;padding-bottom:44px;gap:24px}
+  .band h2{font-size:24px}
+  .band p{margin-top:12px;font-size:16px}
+  .band p.small{margin-top:10px;font-size:14px}
+  .band .act{gap:16px;width:100%}
+  .checks3{gap:8px}
+  .checks3 li{font-size:15px;line-height:1.45}
+  .band .act .ctas{flex-direction:column;gap:10px}
+  .band .act .ctas .btn{width:100%;padding:13px 20px}
+}
+@media (max-width:899px){
+  .hero-in{padding-top:32px;padding-bottom:32px}
+  .nums-in{padding:32px 24px 32px}
+  .sec{padding-top:40px;padding-bottom:40px}
+}
+.hero-sub{word-break:keep-all}      /* 줄바꿈 위치는 <br> 로 고정(PC·모바일 같음) */
