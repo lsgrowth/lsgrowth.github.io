@@ -54,9 +54,14 @@
         to.push(parseFloat(cus[i].getAttribute('data-to'))); dec.push(parseInt(cus[i].getAttribute('data-dec') || '0', 10));
         comma.push(cus[i].getAttribute('data-comma') === '1'); orig.push(cus[i].textContent);
       }
+      if (box.classList.contains('mk-card') || box.closest('.career')) {      // 시작 상태는 JS 가 붙인 클래스일 때만(JS 가 실패하면 최종 상태 그대로)
+        box.classList.add('bar-w');
+        for (var kk = 0; kk < box.children.length; kk++) box.children[kk].style.setProperty('--k', kk);
+      }
       new IntersectionObserver(function (es, ob) {
         if (!es[0].isIntersecting) return;
         ob.disconnect();
+        box.classList.add('go');      // 막대·밑줄·칸 떠오르기 시작
         var t0 = null, D = 1200;
         function step(t) {
           if (t0 === null) t0 = t;
@@ -79,6 +84,15 @@
         es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); hio.unobserve(e.target); } });
       }, { threshold: 0.6 });
       for (var h = 0; h < hls.length; h++) { hls[h].classList.add('hl-w'); hio.observe(hls[h]); }
+    }
+
+    /* 9) 내원 5단계 깔때기: 화면에 들어오면 5칸이 0.1초 간격으로 차례로 켜진다(한 번) */
+    var fn = document.querySelector('.funnel');
+    if (fn) {
+      fn.classList.add('fn-w');
+      new IntersectionObserver(function (es, ob) {
+        if (es[0].isIntersecting) { fn.classList.add('go'); ob.disconnect(); }
+      }, { threshold: 0.35 }).observe(fn);
     }
 
     /* 10) 카드 떠오르기: 첫 화면 아래 섹션의 제목·카드, 같은 줄은 0.06초씩 차례로 */
