@@ -134,8 +134,9 @@
         for (var kk = 0; kk < box.children.length; kk++) box.children[kk].style.setProperty('--k', kk);
       }
       var isMk = box.classList.contains('mk-card');
-      var DUR = isMk ? 600 : (box.closest('.career') ? 1800 : 1200);      // 히어로 숫자 칸마다 0.6초 · 경력 띠 1.8초
-      var OFF = isMk ? 1000 : (box.closest('.career') ? 200 : 0);      // 히어로는 칸마다 1.0초 간격(밑줄 1.0초 간격과 짝) · 경력 띠는 0.2초 간격
+      var isPf = box.classList.contains('proof2');
+      var DUR = isMk ? 600 : (isPf ? 800 : (box.closest('.career') ? 1800 : 1200));      // 사례 숫자 2칸은 짧게 0.8초      // 히어로 숫자 칸마다 0.6초 · 경력 띠 1.8초
+      var OFF = isMk ? 1000 : (isPf ? 120 : (box.closest('.career') ? 200 : 0));      // 히어로는 칸마다 1.0초 간격(밑줄 1.0초 간격과 짝) · 경력 띠는 0.2초 간격
       new IntersectionObserver(function (es, ob) {
         if (!es[0].isIntersecting) return;
         ob.disconnect();
@@ -159,7 +160,7 @@
         }, wait);
       }, { threshold: th || 0.4 }).observe(box);
     }
-    var boxes = document.querySelectorAll('.nums, .mk-card');
+    var boxes = document.querySelectorAll('.nums, .mk-card, .proof2');
     for (var bx = 0; bx < boxes.length; bx++) countUp(boxes[bx], boxes[bx].classList.contains('mk-card') ? 0.2 : 0.4);      // 히어로 카드는 화면에 보이는 즉시(로드 직후) 한 번
 
     /* 8) 형광펜 그어지기 */
@@ -172,16 +173,24 @@
     }
 
     /* 10) 카드 떠오르기: 첫 화면 아래 섹션의 제목·카드, 같은 줄은 0.06초씩 차례로 */
-    var rv = !document.querySelector('.hero-ink') ? [] : document.querySelectorAll('.sec > .eyebrow, .sec > h2, .sec .sub, .notes-side > *, .mcard, .promise, .st, .notecard');
-    if (rv.length) {      // 카드 떠오르기는 메인(히어로가 있는 페이지)에서만
+    var EXTRA = '.promise, .types li, .checks3 li, .proof2 .pf';      // 서브 페이지 포함: about 약속 · services 병원마다 다르게 · 메인 신청 체크 · 사례 숫자 2칸
+    var rv = document.querySelectorAll(document.querySelector('.hero-ink') ? '.sec > .eyebrow, .sec > h2, .sec .sub, .notes-side > *, .mcard, .st, .notecard, ' + EXTRA : EXTRA);
+    if (rv.length) {      // 카드 떠오르기(JS 가 켜졌을 때만 시작 상태를 만든다)
       var rio = new IntersectionObserver(function (es) {
         var vis = es.filter(function (e) { return e.isIntersecting; });
         vis.sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left; });
-        var rowTop = null, idx = 0;
+        var rowTop = null, idx = 0, listIdx = [];
         vis.forEach(function (e) {
-          var top = Math.round(e.boundingClientRect.top / 8);
-          if (rowTop === null || Math.abs(top - rowTop) > 2) { rowTop = top; idx = 0; }
-          e.target.style.setProperty('--d', (idx * 0.1).toFixed(2) + 's'); idx++;
+          var top = Math.round(e.boundingClientRect.top / 8), dly;
+          if (e.target.tagName === 'LI') {      // 세로 목록(체크 3줄·병원마다 다르게)은 같은 목록 안에서 차례로
+            var pi = listIdx.map(function (x) { return x[0]; }).indexOf(e.target.parentNode);
+            if (pi < 0) { listIdx.push([e.target.parentNode, 0]); pi = listIdx.length - 1; }
+            dly = listIdx[pi][1]++;
+          } else {
+            if (rowTop === null || Math.abs(top - rowTop) > 2) { rowTop = top; idx = 0; }
+            dly = idx++;
+          }
+          e.target.style.setProperty('--d', (dly * 0.12).toFixed(2) + 's');
           e.target.classList.add('in'); rio.unobserve(e.target);
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
