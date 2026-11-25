@@ -109,6 +109,59 @@
   } catch (err) { var j = document.getElementById('journey'); if (j) j.classList.remove('jr-w'); }
 })();
 
+/* 릴스 영상 팝업: [data-reel] 링크를 누르면 9:16 영상 창을 연다. 영상은 누를 때 처음 만들어 불러온다(첫 로드 요청 0건, preload none).
+   role=dialog · 닫기 버튼/ESC/바깥 클릭 · 닫으면 정지하고 영상 제거 · Tab 은 창 안에서만 돈다 · 닫으면 눌렀던 자리로 포커스 복귀. */
+(function () {
+  var layer = null, opener = null, prevOverflow = '';
+  function focusables() { return layer ? [].slice.call(layer.querySelectorAll('button, a[href], video')) : []; }
+  function close() {
+    if (!layer) return;
+    var v = layer.querySelector('video');
+    if (v) { try { v.pause(); } catch (e) {} v.removeAttribute('src'); v.load(); }
+    layer.parentNode.removeChild(layer); layer = null;
+    document.documentElement.style.overflow = prevOverflow;
+    document.removeEventListener('keydown', onKey, true);
+    if (opener && opener.focus) opener.focus();
+  }
+  function onKey(e) {
+    if (!layer) return;
+    if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+    if (e.key !== 'Tab') return;
+    var f = focusables(); if (!f.length) return;
+    var first = f[0], last = f[f.length - 1], act = document.activeElement;
+    if (e.shiftKey && (act === first || !layer.contains(act))) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && (act === last || !layer.contains(act))) { e.preventDefault(); first.focus(); }
+  }
+  function open(a) {
+    if (layer) close();
+    opener = a;
+    var title = a.getAttribute('data-title') || '30초 영상';
+    layer = document.createElement('div'); layer.className = 'rp'; layer.setAttribute('role', 'dialog'); layer.setAttribute('aria-modal', 'true'); layer.setAttribute('aria-label', title + ' 영상');
+    var box = document.createElement('div'); box.className = 'rp-box';
+    var head = document.createElement('div'); head.className = 'rp-h';
+    var t = document.createElement('span'); t.className = 'rp-t'; t.textContent = title;
+    var x = document.createElement('button'); x.type = 'button'; x.className = 'rp-x'; x.setAttribute('aria-label', '영상 닫기'); x.textContent = '닫기 ✕';
+    head.appendChild(t); head.appendChild(x);
+    var v = document.createElement('video'); v.controls = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.preload = 'none';
+    if (a.getAttribute('data-poster')) v.poster = a.getAttribute('data-poster');
+    v.src = a.getAttribute('data-src');
+    var ig = document.createElement('a'); ig.className = 'rp-ig'; ig.href = a.getAttribute('data-ig') || '#'; ig.target = '_blank'; ig.rel = 'noopener'; ig.textContent = '인스타그램에서 더 보기 →';
+    box.appendChild(head); box.appendChild(v); box.appendChild(ig); layer.appendChild(box);
+    layer.addEventListener('click', function (e) { if (e.target === layer) close(); });
+    x.addEventListener('click', close);
+    prevOverflow = document.documentElement.style.overflow; document.documentElement.style.overflow = 'hidden';
+    document.body.appendChild(layer);
+    document.addEventListener('keydown', onKey, true);
+    x.focus();
+    try { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } catch (e) {}
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('[data-reel]') : null;
+    if (!a) return;
+    e.preventDefault(); open(a);
+  });
+})();
+
 /* 모션: IntersectionObserver 로 한 번씩만(스크롤 이벤트 계산 없음). 움직임 줄이기 설정이거나 IO 가 없으면 아무것도 하지 않고 최종 상태 그대로 둔다. */
 (function () {
   try {
