@@ -804,3 +804,44 @@ html.motion .h1 .sj::after{animation:ulgrow .35s ease-out both;animation-delay:c
 .ck-meta{margin:0 0 26px!important;font-size:13px;font-weight:500;line-height:1.5;color:var(--proof-red);white-space:nowrap}
 .ck-short{display:none}
 @media (max-width:339px){.ck-full{display:none}.ck-short{display:inline}}      /* 320px 대: 마지막 항목을 줄여 한 줄 유지 */
+
+/* 14차: 줄바꿈 디테일 */
+p,li,dd,.note-d,.mk-s{text-wrap:pretty}
+h1,h2,h3,h4,summary{text-wrap:balance}
+.nw{white-space:nowrap}
+.faq .faq-links,.faq-links{display:block;margin-top:10px;font-size:14px}
+.faq-links .fl-tag{display:block;font-size:13px;color:var(--gray,#5b5b5b);margin-bottom:2px}
+.faq-links a{display:block;text-wrap:pretty;word-break:keep-all}
+
+/* 14차: 푸터 (잉크, 위 무료 진단 섹션과 이어짐) */
+footer.site-foot{max-width:none;margin:0;padding:0;display:block;background:var(--ink);color:var(--cream);border-top:1px solid rgba(244,242,238,.12);font-size:14px}
+.sf-in{max-width:1200px;margin:0 auto;padding:44px 24px 36px;display:grid;grid-template-columns:1fr 1.6fr;gap:32px 48px}
+.sf-brand strong{display:block;font-weight:900;font-size:18px;letter-spacing:-.02em;color:var(--cream)}
+.sf-brand p{margin:8px 0 0;font-size:15px;color:var(--cream)}
+.sf-ic{display:flex;gap:4px;margin:14px 0 0 -10px}
+.sf-ic a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:var(--cream);border-radius:50%}
+.sf-ic a:hover,.sf-ic a:focus-visible{color:var(--lemon)}
+.sf-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sf-cols h2{font-size:12px;font-weight:700;letter-spacing:.04em;color:#F07A2A;margin:0 0 6px;line-height:1.4}
+.sf-cols a{display:block;padding:7px 0;font-size:14px;color:#BDB8B0;text-decoration:none;word-break:keep-all}
+.sf-cols a:hover,.sf-cols a:focus-visible,.sf-copy a:hover,.sf-copy a:focus-visible{text-decoration:underline;color:var(--cream)}
+.sf-cols .sf-mail{font-size:12.5px;overflow-wrap:anywhere}
+.sf-copy{grid-column:1/-1;margin:0;padding-top:20px;border-top:1px solid rgba(244,242,238,.12);font-size:12.5px;color:#9A958E}
+.sf-copy a{color:#BDB8B0;text-decoration:none}
+@media (max-width:899px){
+  .sf-in{grid-template-columns:1fr;padding:36px 24px calc(40px + 64px + env(safe-area-inset-bottom))}
+  .sf-cols{grid-template-columns:1fr 1fr}
+}
+.sf-cols .sf-mail{overflow-wrap:normal}
+.sf-copy a{display:inline-block}
+@media (max-width:899px){.sf-copy .sf-dot{display:none}.sf-copy .nw{margin-right:14px}}
+
+/* 14차: 함께한 진료과 */
+.proof-depts{margin:18px 0 0;max-width:680px}
+.pd-l{display:block;font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--tangerine-text,#B44816);margin-bottom:4px}
+.pd-v{margin:0;font-size:15px;font-weight:600;line-height:1.7;color:var(--ink);word-break:keep-all}
+.proof-depts+.grid3{margin-top:28px}
+.proof-note+.proof-depts{margin-top:16px}
+.about-depts{margin-top:6px;font-weight:600;color:var(--ink)}
+@media (max-width:899px){.proof-depts+.grid3{margin-top:20px}}
+.ledger .nw{white-space:normal}
