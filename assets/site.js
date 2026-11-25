@@ -34,6 +34,81 @@
   upd();
 })();
 
+/* 내원 5단계 종이비행기: 섹션이 45% 보이면 스스로 날아감(모바일 7.5초·PC 6.5초, 정류장마다 살짝 감속). 움직임 줄이기면 비행 없이 최종 상태.
+   JS 가 켜지기 전·실패해도 단계 글은 모두 보인다(흐림은 JS 가 .jr-w 를 붙였을 때만). */
+(function () {
+  try {
+    var sec = document.getElementById('journey');
+    if (!sec) return;
+    var svg = sec.querySelector('.jr-route'), track = svg.querySelector('.jr-track'), flown = svg.querySelector('.jr-flown'),
+        stopsG = svg.querySelector('.jr-stops'), plane = sec.querySelector('.jr-plane'), lane = sec.querySelector('.jr-lane'),
+        list = sec.querySelector('.jr-steps'), replay = sec.querySelector('.jr-replay'), cards = [].slice.call(list.children);
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var L = 0, stopLen = [], vertical = true, prog = 0, played = false;
+    sec.classList.add('jr-w');
+    function rel(el) { var a = el.getBoundingClientRect(), b = sec.getBoundingClientRect(); return { x: a.left - b.left, y: a.top - b.top, w: a.width, h: a.height }; }
+    function lenAt(axis, val) { var lo = 0, hi = L; for (var k = 0; k < 28; k++) { var m = (lo + hi) / 2; track.getPointAtLength(m)[axis] < val ? lo = m : hi = m; } return (lo + hi) / 2; }
+    function build() {
+      vertical = window.innerWidth < 760;
+      var W = sec.clientWidth, H = sec.clientHeight;
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+      var pts, start, d, lr = rel(list), prev;
+      if (vertical) {
+        pts = cards.map(function (c, i) { var r = rel(c); return { x: i % 2 === 0 ? (r.x + r.w + lr.x + lr.w) / 2 : (lr.x + r.x) / 2, y: r.y + r.h * .42 }; });
+        start = { x: lr.x + lr.w * .18, y: pts[0].y - 70 };
+        d = 'M' + start.x + ',' + start.y; prev = start;
+        pts.forEach(function (p) { var dy = p.y - prev.y; d += ' C' + prev.x + ',' + (prev.y + dy * .7) + ' ' + p.x + ',' + (p.y - dy * .7) + ' ' + p.x + ',' + p.y; prev = p; });
+      } else {
+        var l = rel(lane), cy = l.y + l.h / 2;
+        pts = cards.map(function (c) { var r = rel(c); return { x: r.x + r.w / 2, y: cy + 12 }; });
+        start = { x: Math.max(12, lr.x - 40), y: cy - 40 };
+        d = 'M' + start.x + ',' + start.y; prev = start;
+        pts.forEach(function (p, i) {
+          var m = { x: (prev.x + p.x) / 2, y: cy + (i % 2 ? 44 : -44) }, h = (p.x - prev.x) / 4;
+          d += ' C' + (prev.x + h) + ',' + prev.y + ' ' + (m.x - h) + ',' + m.y + ' ' + m.x + ',' + m.y + ' C' + (m.x + h) + ',' + m.y + ' ' + (p.x - h) + ',' + p.y + ' ' + p.x + ',' + p.y; prev = p;
+        });
+      }
+      track.setAttribute('d', d); flown.setAttribute('d', d);
+      L = track.getTotalLength(); flown.style.strokeDasharray = L;
+      stopLen = pts.map(function (p) { return vertical ? lenAt('y', p.y) : lenAt('x', p.x); });
+      stopsG.innerHTML = pts.map(function (p, i) { return '<circle class="jr-stop' + (i === 4 ? ' last' : '') + '" cx="' + p.x + '" cy="' + p.y + '" r="' + (i === 4 ? 9 : 6) + '"></circle>'; }).join('');
+      update();
+    }
+    function update() {
+      var cur = reduce ? L : prog * L;
+      if (!isFinite(cur)) cur = 0;
+      cur = Math.min(L, Math.max(0, cur));
+      var a = track.getPointAtLength(cur), b = track.getPointAtLength(Math.min(L, cur + 1)), c = track.getPointAtLength(Math.max(0, cur - 1));
+      plane.style.transform = 'translate(' + a.x + 'px,' + a.y + 'px) rotate(' + (Math.atan2(b.y - c.y, b.x - c.x) * 180 / Math.PI + 23) + 'deg)';
+      flown.style.strokeDashoffset = L - cur;
+      var dots = stopsG.children;
+      stopLen.forEach(function (s, i) { var on = reduce || cur >= s - 2; cards[i].classList.toggle('on', on); if (dots[i]) dots[i].classList.toggle('on', on); });
+      sec.classList.toggle('landed', cur >= L - 2);
+    }
+    function fly() {
+      var t0 = performance.now(), D = vertical ? 7500 : 6500; replay.hidden = true; sec.classList.add('jr-fly');
+      function ease(t) { return t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+      function step(now) {
+        if (!L || !stopLen.length) { requestAnimationFrame(step); return; }
+        var marks = [0].concat(stopLen).map(function (v) { return v / L; }), n = marks.length - 1;
+        var t = Math.min(1, (now - t0) / D), seg = Math.min(n - 1, Math.floor(t * n)), k = t * n - seg;
+        prog = marks[seg] + (marks[seg + 1] - marks[seg]) * ease(Math.min(1, k)); update();
+        if (t < 1) requestAnimationFrame(step); else replay.hidden = false;
+      }
+      requestAnimationFrame(step);
+    }
+    if ('ResizeObserver' in window) new ResizeObserver(function () { requestAnimationFrame(build); }).observe(sec);
+    window.addEventListener('resize', function () { requestAnimationFrame(build); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+    build();
+    if (reduce || !('IntersectionObserver' in window)) { if (!reduce) { prog = 1; update(); } return; }
+    new IntersectionObserver(function (es, ob) {
+      if (es[0].isIntersecting && !played) { played = true; ob.disconnect(); fly(); }
+    }, { threshold: .45 }).observe(sec);
+    replay.addEventListener('click', function () { prog = 0; update(); fly(); });
+  } catch (err) { var j = document.getElementById('journey'); if (j) j.classList.remove('jr-w'); }
+})();
+
 /* 모션: IntersectionObserver 로 한 번씩만(스크롤 이벤트 계산 없음). 움직임 줄이기 설정이거나 IO 가 없으면 아무것도 하지 않고 최종 상태 그대로 둔다. */
 (function () {
   try {
@@ -54,19 +129,19 @@
         to.push(parseFloat(cus[i].getAttribute('data-to'))); dec.push(parseInt(cus[i].getAttribute('data-dec') || '0', 10));
         comma.push(cus[i].getAttribute('data-comma') === '1'); orig.push(cus[i].textContent);
       }
-      if (box.classList.contains('mk-card') || box.closest('.career')) {      // 시작 상태는 JS 가 붙인 클래스일 때만(JS 가 실패하면 최종 상태 그대로)
+      if (box.closest('.career')) {      // 시작 상태는 JS 가 붙인 클래스일 때만(JS 가 실패하면 최종 상태 그대로)
         box.classList.add('bar-w');
         for (var kk = 0; kk < box.children.length; kk++) box.children[kk].style.setProperty('--k', kk);
       }
       var isMk = box.classList.contains('mk-card');
-      var DUR = isMk ? 1300 : (box.closest('.career') ? 1800 : 1200);      // 히어로 카드 1.3초(첫 화면 전체 3초 이내) · 경력 띠 1.8초
-      var OFF = box.closest('.career') ? 200 : 0;      // 경력 띠는 칸마다 0.2초 간격
+      var DUR = isMk ? 600 : (box.closest('.career') ? 1800 : 1200);      // 히어로 숫자 칸마다 0.6초 · 경력 띠 1.8초
+      var OFF = isMk ? 1000 : (box.closest('.career') ? 200 : 0);      // 히어로는 칸마다 1.0초 간격(밑줄 1.0초 간격과 짝) · 경력 띠는 0.2초 간격
       new IntersectionObserver(function (es, ob) {
         if (!es[0].isIntersecting) return;
         ob.disconnect();
         for (var k = 0; k < cus.length; k++) cus[k].textContent = fmt(0, dec[k], comma[k]);
-        // 히어로 숫자 카드는 H1 밑줄 3개(0.9초 × 3, 0.4초 간격 = 1.7초)가 모두 끝난 뒤에 시작한다
-        var wait = isMk ? Math.max(0, 1700 - (window.performance ? performance.now() : 0)) : 0;
+        // 히어로: 밑줄1(0~.35s) → 숫자1(.35~.95s) → 밑줄2(1.0s) → 숫자2(1.35~1.95s) → 밑줄3(2.0s) → 숫자3(2.35~2.95s). 전체 3초 이내
+        var wait = isMk ? Math.max(0, 350 - (window.performance ? performance.now() : 0)) : 0;
         setTimeout(function () {
           box.classList.add('go');      // 막대·밑줄·칸 떠오르기 시작
           var t0 = null;
@@ -94,15 +169,6 @@
         es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); hio.unobserve(e.target); } });
       }, { threshold: 0.6 });
       for (var h = 0; h < hls.length; h++) { hls[h].classList.add('hl-w'); hio.observe(hls[h]); }
-    }
-
-    /* 9) 내원 5단계 깔때기: 화면에 들어오면 5칸이 0.1초 간격으로 차례로 켜진다(한 번) */
-    var fn = document.querySelector('.funnel');
-    if (fn) {
-      fn.classList.add('fn-w');
-      new IntersectionObserver(function (es, ob) {
-        if (es[0].isIntersecting) { fn.classList.add('go'); ob.disconnect(); }
-      }, { threshold: 0.35 }).observe(fn);
     }
 
     /* 10) 카드 떠오르기: 첫 화면 아래 섹션의 제목·카드, 같은 줄은 0.06초씩 차례로 */
