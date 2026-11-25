@@ -226,7 +226,7 @@
     }
 
     /* 10) 카드 떠오르기: 첫 화면 아래 섹션의 제목·카드, 같은 줄은 0.06초씩 차례로 */
-    var EXTRA = '.promise, .types li, .checks3 li, .proof2 .pf';      // 서브 페이지 포함: about 약속 · services 병원마다 다르게 · 메인 신청 체크 · 사례 숫자 2칸
+    var EXTRA = '.promise, .types li, .checks3 li, .proof2 .pf, .dp-step, .dp-card';      // 서브 페이지 포함: about 약속 · services 병원마다 다르게 · 메인 신청 체크 · 사례 숫자 2칸
     var rv = document.querySelectorAll(document.querySelector('.hero-ink') ? '.sec > .eyebrow, .sec > h2, .sec .sub, .notes-side > *, .mcard, .st, .notecard, ' + EXTRA : EXTRA);
     if (rv.length) {      // 카드 떠오르기(JS 가 켜졌을 때만 시작 상태를 만든다)
       var rio = new IntersectionObserver(function (es) {
