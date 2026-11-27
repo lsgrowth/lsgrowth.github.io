@@ -719,6 +719,8 @@ html.motion .h1 .sj::after{animation:ulgrow .35s ease-out both;animation-delay:c
 .reel-btn:focus-visible{outline:3px solid var(--tangerine);outline-offset:3px}
 .note-item .reel-btn{margin-top:10px}
 .reel-line{margin:12px 0 0}
+.col .reel-line a.reel-btn{color:var(--cream);text-decoration:none}
+.col .reel-line a.reel-btn:hover,.col .reel-line a.reel-btn:focus-visible{color:var(--lemon)}
 .reel-hint{margin:8px 0 0!important;font-weight:700;color:var(--ink)!important}
 .more-link.first{display:table;margin-top:24px}
 .more-link.first+.more-link{display:table;margin-top:12px}

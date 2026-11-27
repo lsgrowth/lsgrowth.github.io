@@ -6,7 +6,7 @@
     <atom:link href="https://lsgrowth.co.kr/rss.xml" rel="self" type="application/rss+xml"/>
     <description>건강보험수가개발 연구원 출신, 300곳 이상의 병원을 컨설팅한 LS 연구소장이 병원 현장에서 직접 보고 겪은 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 24 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0900</lastBuildDate>
     <item>
       <title>병원의 본질 | 병원 매출 올리는 법</title>
       <link>https://lsgrowth.co.kr/columns/01.html</link>
@@ -38,6 +38,14 @@
       <pubDate>Sun, 22 Nov 2026 09:00:00 +0900</pubDate>
       <author>LS 연구소장</author>
       <description>"아 대표님, 도대체 병원마케팅 어떻게 해야 됩니까? 돈도 엄청 태웠는데 너무 어려워요." 이 질문, 내가 제일 많이 받는 질문 중 탑5 안에 들지 않을까?</description>
+    </item>
+    <item>
+      <title>신환은 늘었는데 왜 통장은 그대로일까 | 병원매출 · 병원경영</title>
+      <link>https://lsgrowth.co.kr/columns/05.html</link>
+      <guid isPermaLink="true">https://lsgrowth.co.kr/columns/05.html</guid>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 +0900</pubDate>
+      <author>LS 연구소장</author>
+      <description>&quot;대표님, 우리 병원 신환은 늘었는데 남는 게 없어요.&quot; 지난달 병원 미팅에 갔다가 들은 말이다.</description>
     </item>
   </channel>
 </rss>
