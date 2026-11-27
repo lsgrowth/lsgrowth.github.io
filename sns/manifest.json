@@ -1,39 +1,17 @@
 {
- "03sc": [
-  "c03s-01.jpg",
-  "c03s-02.jpg",
-  "c03s-03.jpg",
-  "c03s-04.jpg",
-  "c03s-05.jpg"
- ],
- "03br": [
-  "r03b-cover.jpg",
-  "r03b.mp4"
- ],
  "01qc": [
   "c01q-01.jpg"
  ],
- "07ar": [
-  "r07a-cover.jpg",
-  "r07a.mp4"
- ],
- "01sc": [
-  "c01s-01.jpg",
-  "c01s-02.jpg",
-  "c01s-03.jpg",
-  "c01s-04.jpg",
-  "c01s-05.jpg"
- ],
- "04br": [
-  "r04b-cover.jpg",
-  "r04b.mp4"
+ "07cr": [
+  "r07c-cover.jpg",
+  "r07c.mp4"
  ],
  "03qc": [
   "c03q-01.jpg"
  ],
- "28ar": [
-  "r28a-cover.jpg",
-  "r28a.mp4"
+ "28cr": [
+  "r28c-cover.jpg",
+  "r28c.mp4"
  ],
  "04sc": [
   "c04s-01.jpg",
@@ -42,16 +20,20 @@
   "c04s-04.jpg",
   "c04s-05.jpg"
  ],
- "01br": [
-  "r01b-cover.jpg",
-  "r01b.mp4"
+ "01cr": [
+  "r01c-cover.jpg",
+  "r01c.mp4"
  ],
- "04qc": [
-  "c04q-01.jpg"
+ "01sc": [
+  "c01s-01.jpg",
+  "c01s-02.jpg",
+  "c01s-03.jpg",
+  "c01s-04.jpg",
+  "c01s-05.jpg"
  ],
- "07br": [
-  "r07b-cover.jpg",
-  "r07b.mp4"
+ "05cr": [
+  "r05c-cover.jpg",
+  "r05c.mp4"
  ],
  "07c": [
   "c07-01.jpg",
@@ -62,27 +44,16 @@
   "c07-06.jpg",
   "c07-07.jpg"
  ],
- "05br": [
-  "r05b-cover.jpg",
-  "r05b.mp4"
+ "06dr": [
+  "r06d-cover.jpg",
+  "r06d.mp4"
  ],
- "07sc": [
-  "c07s-01.jpg",
-  "c07s-02.jpg",
-  "c07s-03.jpg",
-  "c07s-04.jpg",
-  "c07s-05.jpg"
+ "04qc": [
+  "c04q-01.jpg"
  ],
- "03cr": [
-  "r03c-cover.jpg",
-  "r03c.mp4"
- ],
- "07qc": [
-  "c07q-01.jpg"
- ],
- "28br": [
-  "r28b-cover.jpg",
-  "r28b.mp4"
+ "07dr": [
+  "r07d-cover.jpg",
+  "r07d.mp4"
  ],
  "28c": [
   "c28-01.jpg",
@@ -93,27 +64,20 @@
   "c28-06.jpg",
   "c28-07.jpg"
  ],
- "06ar": [
-  "r06a-cover.jpg",
-  "r06a.mp4"
+ "02dr": [
+  "r02d-cover.jpg",
+  "r02d.mp4"
  ],
- "28sc": [
-  "c28s-01.jpg",
-  "c28s-02.jpg",
-  "c28s-03.jpg",
-  "c28s-04.jpg",
-  "c28s-05.jpg"
+ "07sc": [
+  "c07s-01.jpg",
+  "c07s-02.jpg",
+  "c07s-03.jpg",
+  "c07s-04.jpg",
+  "c07s-05.jpg"
  ],
- "02cr": [
-  "r02c-cover.jpg",
-  "r02c.mp4"
- ],
- "28qc": [
-  "c28q-01.jpg"
- ],
- "06br": [
-  "r06b-cover.jpg",
-  "r06b.mp4"
+ "03dr": [
+  "r03d-cover.jpg",
+  "r03d.mp4"
  ],
  "05c": [
   "c05-01.jpg",
@@ -124,9 +88,27 @@
   "c05-06.jpg",
   "c05-07.jpg"
  ],
- "04cr": [
-  "r04c-cover.jpg",
-  "r04c.mp4"
+ "04dr": [
+  "r04d-cover.jpg",
+  "r04d.mp4"
+ ],
+ "28sc": [
+  "c28s-01.jpg",
+  "c28s-02.jpg",
+  "c28s-03.jpg",
+  "c28s-04.jpg",
+  "c28s-05.jpg"
+ ],
+ "01dr": [
+  "r01d-cover.jpg",
+  "r01d.mp4"
+ ],
+ "07qc": [
+  "c07q-01.jpg"
+ ],
+ "07ar": [
+  "r07a-cover.jpg",
+  "r07a.mp4"
  ],
  "05sc": [
   "c05s-01.jpg",
@@ -135,16 +117,16 @@
   "c05s-04.jpg",
   "c05s-05.jpg"
  ],
- "06cr": [
-  "r06c-cover.jpg",
-  "r06c.mp4"
+ "04br": [
+  "r04b-cover.jpg",
+  "r04b.mp4"
  ],
- "05qc": [
-  "c05q-01.jpg"
+ "28qc": [
+  "c28q-01.jpg"
  ],
- "07cr": [
-  "r07c-cover.jpg",
-  "r07c.mp4"
+ "28ar": [
+  "r28a-cover.jpg",
+  "r28a.mp4"
  ],
  "06c": [
   "c06-01.jpg",
@@ -155,41 +137,48 @@
   "c06-06.jpg",
   "c06-07.jpg"
  ],
- "28cr": [
-  "r28c-cover.jpg",
-  "r28c.mp4"
+ "01br": [
+  "r01b-cover.jpg",
+  "r01b.mp4"
  ],
- "01cr": [
-  "r01c-cover.jpg",
-  "r01c.mp4"
+ "05qc": [
+  "c05q-01.jpg"
  ],
- "05cr": [
-  "r05c-cover.jpg",
-  "r05c.mp4"
+ "07br": [
+  "r07b-cover.jpg",
+  "r07b.mp4"
  ],
- "06dr": [
-  "r06d-cover.jpg",
-  "r06d.mp4"
+ "05br": [
+  "r05b-cover.jpg",
+  "r05b.mp4"
  ],
- "07dr": [
-  "r07d-cover.jpg",
-  "r07d.mp4"
+ "03cr": [
+  "r03c-cover.jpg",
+  "r03c.mp4"
  ],
- "02dr": [
-  "r02d-cover.jpg",
-  "r02d.mp4"
+ "28br": [
+  "r28b-cover.jpg",
+  "r28b.mp4"
  ],
- "03dr": [
-  "r03d-cover.jpg",
-  "r03d.mp4"
+ "06ar": [
+  "r06a-cover.jpg",
+  "r06a.mp4"
  ],
- "04dr": [
-  "r04d-cover.jpg",
-  "r04d.mp4"
+ "02cr": [
+  "r02c-cover.jpg",
+  "r02c.mp4"
  ],
- "01dr": [
-  "r01d-cover.jpg",
-  "r01d.mp4"
+ "06br": [
+  "r06b-cover.jpg",
+  "r06b.mp4"
+ ],
+ "04cr": [
+  "r04c-cover.jpg",
+  "r04c.mp4"
+ ],
+ "06cr": [
+  "r06c-cover.jpg",
+  "r06c.mp4"
  ],
  "07sr": [
   "r07s-cover.jpg",
