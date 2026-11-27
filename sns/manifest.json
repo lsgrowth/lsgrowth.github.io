@@ -1,26 +1,4 @@
 {
- "04r": [
-  "r04-cover.jpg",
-  "r04.mp4"
- ],
- "02sc": [
-  "c02s-01.jpg",
-  "c02s-02.jpg",
-  "c02s-03.jpg",
-  "c02s-04.jpg",
-  "c02s-05.jpg"
- ],
- "05ar": [
-  "r05a-cover.jpg",
-  "r05a.mp4"
- ],
- "02qc": [
-  "c02q-01.jpg"
- ],
- "02br": [
-  "r02b-cover.jpg",
-  "r02b.mp4"
- ],
  "03sc": [
   "c03s-01.jpg",
   "c03s-02.jpg",
@@ -164,6 +142,10 @@
  "05qc": [
   "c05q-01.jpg"
  ],
+ "07cr": [
+  "r07c-cover.jpg",
+  "r07c.mp4"
+ ],
  "07sr": [
   "r07s-cover.jpg",
   "r07s.mp4"
@@ -177,28 +159,64 @@
   "c06-06.jpg",
   "c06-07.jpg"
  ],
+ "28cr": [
+  "r28c-cover.jpg",
+  "r28c.mp4"
+ ],
  "02sr": [
   "r02s-cover.jpg",
   "r02s.mp4"
+ ],
+ "01cr": [
+  "r01c-cover.jpg",
+  "r01c.mp4"
  ],
  "28sr": [
   "r28s-cover.jpg",
   "r28s.mp4"
  ],
+ "05cr": [
+  "r05c-cover.jpg",
+  "r05c.mp4"
+ ],
  "01sr": [
   "r01s-cover.jpg",
   "r01s.mp4"
+ ],
+ "06dr": [
+  "r06d-cover.jpg",
+  "r06d.mp4"
  ],
  "05sr": [
   "r05s-cover.jpg",
   "r05s.mp4"
  ],
+ "07dr": [
+  "r07d-cover.jpg",
+  "r07d.mp4"
+ ],
  "03sr": [
   "r03s-cover.jpg",
   "r03s.mp4"
  ],
+ "02dr": [
+  "r02d-cover.jpg",
+  "r02d.mp4"
+ ],
  "04sr": [
   "r04s-cover.jpg",
   "r04s.mp4"
+ ],
+ "03dr": [
+  "r03d-cover.jpg",
+  "r03d.mp4"
+ ],
+ "04dr": [
+  "r04d-cover.jpg",
+  "r04d.mp4"
+ ],
+ "01dr": [
+  "r01d-cover.jpg",
+  "r01d.mp4"
  ]
 }
